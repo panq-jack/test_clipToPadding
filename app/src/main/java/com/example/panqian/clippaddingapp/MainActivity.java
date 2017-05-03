@@ -13,7 +13,8 @@ import android.widget.ListView;
  */
 
 public class MainActivity extends ListActivity {
-    private static final String[] items={"clipToPadding:  true","clipToPadding:  false"};
+    private static final String[] items={"clipToPadding:  true","clipToPadding:  false",
+    "状态栏底色自定义：黑白渐变" ,"状态栏 与页面内容重叠"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +33,15 @@ public class MainActivity extends ListActivity {
                 break;
             case 1:
                 intent.putExtra("clip",false);
+                startActivity(intent);
+                break;
+            case 2:
+                intent.putExtra("tint",true);
+                startActivity(intent);
+                break;
+            case 3:
+                intent.putExtra("tint",true);
+                intent.putExtra("trans",true);
                 startActivity(intent);
                 break;
             default:
